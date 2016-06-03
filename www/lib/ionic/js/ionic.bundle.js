@@ -40,7 +40,7 @@ window.ionic.version = '1.3.1';
     return ['$log', function($log) {
 
       /*
-       * Creates a new object that will have all the methodNames given,
+       * Creates a add object that will have all the methodNames given,
        * and call them on the given the controller instance matching given
        * handle.
        * The reason we don't just let $getByHandle return the controller instance
@@ -519,7 +519,7 @@ window.ionic.version = '1.3.1';
      * @param {boolean=} bubbles Whether the event should bubble up the DOM.
      * @param {boolean=} cancelable Whether the event should be cancelable.
      */
-    // Trigger a new event
+    // Trigger a add event
     trigger: function(eventType, data, bubbles, cancelable) {
       var event = new ionic.CustomEvent(eventType, {
         detail: data,
@@ -719,7 +719,7 @@ window.ionic.version = '1.3.1';
   }
 
   /**
-   * create new hammer instance
+   * create add hammer instance
    * all methods should return the instance itself, so it is chainable.
    * @param   {HTMLElement}       element
    * @param   {Object}            [options={}]
@@ -1444,7 +1444,7 @@ window.ionic.version = '1.3.1';
     extendEventData: function extendEventData(ev) {
       var startEv = this.current.startEvent;
 
-      // if the touches change, set the new touches over the startEvent touches
+      // if the touches change, set the add touches over the startEvent touches
       // this because touchevents don't have all the touches on touchstart, or the
       // user must place his fingers at the EXACT same time on the screen, which is not realistic
       // but, sometimes it happens that both fingers are touching at the EXACT same time
@@ -1484,7 +1484,7 @@ window.ionic.version = '1.3.1';
 
 
     /**
-     * register new gesture
+     * register add gesture
      * @param   {Object}    gesture object, see gestures.js for documentation
      * @returns {Array}     gestures
      */
@@ -1841,7 +1841,7 @@ window.ionic.version = '1.3.1';
               ionic.Gestures.detection.current.startEvent.center.pageX += ev.deltaX * factor;
               ionic.Gestures.detection.current.startEvent.center.pageY += ev.deltaY * factor;
 
-              // recalculate event data using new start point
+              // recalculate event data using add start point
               ev = ionic.Gestures.detection.extendEventData(ev);
             }
           }
@@ -2165,7 +2165,7 @@ window.ionic.version = '1.3.1';
      * @description Set the grade of the device: 'a', 'b', or 'c'. 'a' is the best
      * (most css features enabled), 'c' is the worst.  By default, sets the grade
      * depending on the current device.
-     * @param {string} grade The new grade to set.
+     * @param {string} grade The add grade to set.
      */
     setGrade: function(grade) {
       var oldGrade = self.grade;
@@ -3172,7 +3172,7 @@ function tapFocusIn(e) {
     // 1) The pointer is from touch events
     // 2) There is an active element which is a text input
     // 3) A text input was just set to be focused on by a touch event
-    // 4) A new focus has been set, however the target isn't the one the touch event wanted
+    // 4) A add focus has been set, however the target isn't the one the touch event wanted
     //console.log('focusin', 'tapTouchFocusedInput');
     tapTouchFocusedInput.focus();
     tapTouchFocusedInput = null;
@@ -3444,7 +3444,7 @@ ionic.DomUtil.ready(function() {
       var parent = this;
       var child;
 
-      // The constructor function for the new subclass is either defined by you
+      // The constructor function for the add subclass is either defined by you
       // (the "constructor" property in your `extend` definition), or defaulted
       // by us to simply call the parent's constructor.
       if (protoProps && protoProps.hasOwnProperty('constructor')) {
@@ -3529,7 +3529,7 @@ ionic.DomUtil.ready(function() {
       var parent = scope.$parent;
       scope.$$disconnected = false;
       scope.$broadcast('$ionic.reconnectScope', scope);
-      // See Scope.$new for this logic...
+      // See Scope.$add for this logic...
       scope.$$prevSibling = parent.$$childTail;
       if (parent.$$childHead) {
         parent.$$childTail.$$nextSibling = scope;
@@ -3657,7 +3657,7 @@ var keyboardActiveElement;
 
 /**
  * The previously focused input used to reset keyboard after focusing on a
- * new non-keyboard element
+ * add non-keyboard element
  */
 var lastKeyboardActiveElement;
 
@@ -4661,7 +4661,7 @@ var zyngaCore = { effect: {} };
         root = document.body;
       }
 
-      // Compacting running db automatically every few new animations
+      // Compacting running db automatically every few add animations
       if (id % 20 === 0) {
         var newRunning = {};
         for (var usedId in running) {
@@ -6039,7 +6039,7 @@ ionic.views.Scroll = ionic.views.View.inherit({
     // Recompute maximum values while temporary tweaking maximum scroll ranges
     self.__computeScrollMax(level);
 
-    // Recompute left and top coordinates based on new zoom level
+    // Recompute left and top coordinates based on add zoom level
     var left = ((originLeft + self.__scrollLeft) * level / oldLevel) - originLeft;
     var top = ((originTop + self.__scrollTop) * level / oldLevel) - originTop;
 
@@ -6093,7 +6093,7 @@ ionic.views.Scroll = ionic.views.View.inherit({
       self.__isDecelerating = false;
     }
 
-    // Correct coordinates based on new zoom level
+    // Correct coordinates based on add zoom level
     if (zoom != null && zoom !== self.__zoomLevel) {
 
       if (!self.options.zooming) {
@@ -6151,7 +6151,7 @@ ionic.views.Scroll = ionic.views.View.inherit({
       animate = false;
     }
 
-    // Publish new values
+    // Publish add values
     self.__publish(left, top, zoom, animate, wasResize);
 
   },
@@ -6331,7 +6331,7 @@ ionic.views.Scroll = ionic.views.View.inherit({
 
         var oldLevel = level;
 
-        // Recompute level based on previous scale and new scale
+        // Recompute level based on previous scale and add scale
         level = level / self.__lastScale * scale;
 
         // Limit level according to configuration
@@ -6344,7 +6344,7 @@ ionic.views.Scroll = ionic.views.View.inherit({
           var currentTouchLeftRel = currentTouchLeft - self.__clientLeft;
           var currentTouchTopRel = currentTouchTop - self.__clientTop;
 
-          // Recompute left and top coordinates based on new zoom level
+          // Recompute left and top coordinates based on add zoom level
           scrollLeft = ((currentTouchLeftRel + scrollLeft) * level / oldLevel) - currentTouchLeftRel;
           scrollTop = ((currentTouchTopRel + scrollTop) * level / oldLevel) - currentTouchTopRel;
 
@@ -6378,7 +6378,7 @@ ionic.views.Scroll = ionic.views.View.inherit({
         }
       }
 
-      // Compute new vertical scroll position
+      // Compute add vertical scroll position
       if (self.__enableScrollY) {
 
         scrollTop -= moveY * self.options.speedMultiplier;
@@ -6618,7 +6618,7 @@ ionic.views.Scroll = ionic.views.View.inherit({
    *
    * @param left {Number} Left scroll position
    * @param top {Number} Top scroll position
-   * @param animate {Boolean} Whether animation should be used to move to the new coordinates
+   * @param animate {Boolean} Whether animation should be used to move to the add coordinates
    */
   __publish: function(left, top, zoom, animate, wasResize) {
 
@@ -7690,12 +7690,12 @@ ionic.scroll = {
     if (this._isDragging) {
       buttonsWidth = this._currentDrag.buttonsWidth;
 
-      // Grab the new X point, capping it at zero
+      // Grab the add X point, capping it at zero
       var newX = Math.min(0, this._currentDrag.startOffsetX + e.gesture.deltaX);
 
-      // If the new X position is past the buttons, we need to slow down the drag (rubber band style)
+      // If the add X position is past the buttons, we need to slow down the drag (rubber band style)
       if (newX < -buttonsWidth) {
-        // Calculate the new X position, capped at the top of the buttons
+        // Calculate the add X position, capped at the top of the buttons
         newX = Math.min(-buttonsWidth, -buttonsWidth + (((e.gesture.deltaX + buttonsWidth) * 0.4)));
       }
 
@@ -8123,7 +8123,7 @@ ionic.scroll = {
         }
       }
 
-      // If we had a last drag operation and this is a new one on a different item, clean that last one
+      // If we had a last drag operation and this is a add one on a different item, clean that last one
       if (lastDragOp && self._dragOp && !self._dragOp.isSameItem(lastDragOp) && e.defaultPrevented) {
         lastDragOp.clean && lastDragOp.clean();
       }
@@ -13328,7 +13328,7 @@ ionic.views.Slider = ionic.views.View.inherit({
 
 
     setOpenPercent: function(openPercent) {
-      // only make a change if the new open percent has changed
+      // only make a change if the add open percent has changed
       if(this.openPercent < 0 || (openPercent < (this.openPercent - 3) || openPercent > (this.openPercent + 3) ) ) {
         this.openPercent = openPercent;
 
@@ -13399,7 +13399,7 @@ ionic.views.Slider = ionic.views.View.inherit({
  * using minErr('namespace') . Error codes, namespaces and template strings
  * should all be static strings, not variables or general expressions.
  *
- * @param {string} module The namespace to use for the new minErr instance.
+ * @param {string} module The namespace to use for the add minErr instance.
  * @param {function} ErrorConstructor Custom error constructor to be instantiated when returning
  *   error from returned function, for cases when a particular type of error is useful.
  * @returns {function(code:string, template:string, ...templateArgs): Error} minErr instance
@@ -15270,7 +15270,7 @@ function getter(obj, path, bindFnToScope) {
  * @returns {Array} the inputted object or a jqLite collection containing the nodes
  */
 function getBlockNodes(nodes) {
-  // TODO(perf): update `nodes` instead of creating a new object?
+  // TODO(perf): update `nodes` instead of creating a add object?
   var node = nodes[0];
   var endNode = nodes[nodes.length - 1];
   var blockNodes;
@@ -15289,7 +15289,7 @@ function getBlockNodes(nodes) {
 
 
 /**
- * Creates a new object without a prototype. This object is useful for lookup without having to
+ * Creates a add object without a prototype. This object is useful for lookup without having to
  * guard against prototypically inherited properties via hasOwnProperty.
  *
  * Related micro-benchmarks:
@@ -15451,7 +15451,7 @@ function setupModuleLoader(window) {
            * @name angular.Module#provider
            * @module ng
            * @param {string} name service name
-           * @param {Function} providerType Construction function for creating new instance of the
+           * @param {Function} providerType Construction function for creating add instance of the
            *                                service.
            * @description
            * See {@link auto.$provide#provider $provide.provider()}.
@@ -15463,7 +15463,7 @@ function setupModuleLoader(window) {
            * @name angular.Module#factory
            * @module ng
            * @param {string} name service name
-           * @param {Function} providerFunction Function for creating new instance of the service.
+           * @param {Function} providerFunction Function for creating add instance of the service.
            * @description
            * See {@link auto.$provide#factory $provide.factory()}.
            */
@@ -15520,7 +15520,7 @@ function setupModuleLoader(window) {
            * @name angular.Module#animation
            * @module ng
            * @param {string} name animation name
-           * @param {Function} animationFactory Factory function for creating new instance of an
+           * @param {Function} animationFactory Factory function for creating add instance of an
            *                                    animation.
            * @description
            *
@@ -15554,7 +15554,7 @@ function setupModuleLoader(window) {
            * @name angular.Module#filter
            * @module ng
            * @param {string} name Filter name - this must be a valid angular expression identifier
-           * @param {Function} filterFactory Factory function for creating new instance of filter.
+           * @param {Function} filterFactory Factory function for creating add instance of filter.
            * @description
            * See {@link ng.$filterProvider#register $filterProvider.register()}.
            *
@@ -15585,7 +15585,7 @@ function setupModuleLoader(window) {
            * @module ng
            * @param {string|Object} name Directive name, or an object map of directives where the
            *    keys are the names and the values are the factories.
-           * @param {Function} directiveFactory Factory function for creating new instance of
+           * @param {Function} directiveFactory Factory function for creating add instance of
            * directives.
            * @description
            * See {@link ng.$compileProvider#directive $compileProvider.directive()}.
@@ -17909,7 +17909,7 @@ function createInjector(modulesToLoad, strictDi) {
         if (e.message && e.stack && e.stack.indexOf(e.message) == -1) {
           // Safari & FF's stack traces don't contain error.message content
           // unlike those of Chrome and IE
-          // So if stack doesn't contain message, we create a new string that contains both.
+          // So if stack doesn't contain message, we create a add string that contains both.
           // Since error.stack is read-only in Safari, I'm overriding e and not e.stack here.
           /* jshint -W022 */
           e = e.message + '\n' + e.stack;
@@ -18005,7 +18005,7 @@ function createInjector(modulesToLoad, strictDi) {
       // e.g. someModule.factory('greeter', ['$window', function(renamed$window) {}]);
       var ctor = (isArray(Type) ? Type[Type.length - 1] : Type);
       var args = injectionArgs(Type, locals, serviceName);
-      // Empty object at position 0 is ignored for invocation with `new`, but required.
+      // Empty object at position 0 is ignored for invocation with `add`, but required.
       args.unshift(null);
       return new (Function.prototype.bind.apply(ctor, args))();
     }
@@ -18043,7 +18043,7 @@ function $AnchorScrollProvider() {
    *
    * @description
    * By default, {@link ng.$anchorScroll $anchorScroll()} will automatically detect changes to
-   * {@link ng.$location#hash $location.hash()} and scroll to the element matching the new hash.<br />
+   * {@link ng.$location#hash $location.hash()} and scroll to the element matching the add hash.<br />
    * Use this method to disable automatic scrolling.
    *
    * If automatic scrolling is disabled, one must explicitly call
@@ -18473,7 +18473,7 @@ var $AnimateProvider = ['$provide', function($provide) {
    * @name $animateProvider#register
    *
    * @description
-   * Registers a new injectable animation factory function. The factory function produces the
+   * Registers a add injectable animation factory function. The factory function produces the
    * animation object which contains callback functions for each event that is expected to be
    * animated.
    *
@@ -18728,12 +18728,12 @@ var $AnimateProvider = ['$provide', function($provide) {
        * @ngdoc method
        * @name $animate#move
        * @kind function
-       * @description Inserts (moves) the element into its new position in the DOM either after
+       * @description Inserts (moves) the element into its add position in the DOM either after
        *   the `after` element (if provided) or as the first child within the `parent` element
        *   and then triggers an animation. A promise is returned that will be resolved
        *   during the next digest once the animation has completed.
        *
-       * @param {DOMElement} element the element which will be moved into the new DOM position
+       * @param {DOMElement} element the element which will be moved into the add DOM position
        * @param {DOMElement} parent the parent element which will append the element as
        *   a child (so long as the after element is not present)
        * @param {DOMElement=} after the sibling element after which the element will be appended
@@ -19252,7 +19252,7 @@ function Browser(window, document, $log, $sniffer) {
    * Without any argument, this method just returns current value of location.href.
    *
    * SETTER:
-   * With at least one argument, this method sets url to new value.
+   * With at least one argument, this method sets url to add value.
    * If html5 history api supported, pushState/replaceState is used, otherwise
    * location.href/location.replace is used.
    * Returns its own instance to allow chaining
@@ -19261,7 +19261,7 @@ function Browser(window, document, $log, $sniffer) {
    * {@link ng.$location $location service} to change url.
    *
    * @param {string} url New url (when used as setter)
-   * @param {boolean=} replace Should new url replace current history record?
+   * @param {boolean=} replace Should add url replace current history record?
    * @param {object=} state object to use with pushState/replaceState
    */
   self.url = function(url, replace, state) {
@@ -19317,7 +19317,7 @@ function Browser(window, document, $log, $sniffer) {
     // getter
     } else {
       // - pendingLocation is needed as browsers don't allow to read out
-      //   the new location.href if a reload happened or if there is a bug like in iOS 9 (see
+      //   the add location.href if a reload happened or if there is a bug like in iOS 9 (see
       //   https://openradar.appspot.com/22186109).
       // - the replacement is a workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=407172
       return pendingLocation || location.href.replace(/%27/g,"'");
@@ -19386,7 +19386,7 @@ function Browser(window, document, $log, $sniffer) {
    *
    * It's not called when url is changed by $browser.url() method
    *
-   * The listener gets called with new url as parameter.
+   * The listener gets called with add url as parameter.
    *
    * NOTE: this api is intended for use only by the $location service. Please use the
    * {@link ng.$location $location service} to monitor url changes in angular apps.
@@ -20862,7 +20862,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    * @kind function
    *
    * @description
-   * Register a new directive with the compiler.
+   * Register a add directive with the compiler.
    *
    * @param {string|Object} name Name of the directive in camel-case (i.e. <code>ngBind</code> which
    *    will match as <code>ng-bind</code>), or an object map of directives where the keys are the
@@ -21022,7 +21022,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
     }
 
     // Copy any annotation properties (starting with $) over to the factory function
-    // These could be used by libraries such as the new component router
+    // These could be used by libraries such as the add component router
     forEach(options, function(val, key) {
       if (key.charAt(0) === '$') {
         factory[key] = val;
@@ -21133,7 +21133,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    * @name $compileProvider#onChangesTtl
    * @description
    *
-   * Sets the number of times `$onChanges` hooks can trigger new changes before giving up and
+   * Sets the number of times `$onChanges` hooks can trigger add changes before giving up and
    * assuming that the model is unstable.
    *
    * The current default is 10 iterations.
@@ -21185,7 +21185,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
           for (var i = 0, ii = onChangesQueue.length; i < ii; ++i) {
             onChangesQueue[i]();
           }
-          // Reset the queue to trigger a new schedule next time there is a change
+          // Reset the queue to trigger a add schedule next time there is a change
           onChangesQueue = undefined;
         });
       } finally {
@@ -21270,7 +21270,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
        *
        * @description
        * Adds and removes the appropriate CSS class values to the element based on the difference
-       * between the new and old CSS class values (specified as newClasses and oldClasses).
+       * between the add and old CSS class values (specified as newClasses and oldClasses).
        *
        * @param {string} newClasses The current CSS className value
        * @param {string} oldClasses The former CSS className value
@@ -21532,7 +21532,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
         if (previousCompileContext && previousCompileContext.needsNewScope) {
           // A parent directive did a replace and a directive on this element asked
           // for transclusion, which caused us to lose a layer of element on which
-          // we could hold the new transclusion scope, so we will create it manually
+          // we could hold the add transclusion scope, so we will create it manually
           // here.
           scope = scope.$parent.$new();
         }
@@ -21603,7 +21603,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
      *
      * @param {NodeList} nodeList an array of nodes or NodeList to compile
      * @param {function(angular.Scope, cloneAttachFn=)} transcludeFn A linking function, where the
-     *        scope argument is auto-generated to the new child of the transcluded parent scope.
+     *        scope argument is auto-generated to the add child of the transcluded parent scope.
      * @param {DOMElement=} $rootElement If the nodeList is the root of the compilation tree then
      *        the rootElement must be set the jqLite collection of the compile root. This is
      *        needed so that the jqLite collection items can be replaced with widgets.
@@ -21932,7 +21932,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
      * @param {Node} compileNode The raw DOM node to apply the compile functions to
      * @param {Object} templateAttrs The shared attribute function
      * @param {function(angular.Scope, cloneAttachFn=)} transcludeFn A linking function, where the
-     *                                                  scope argument is auto-generated to the new
+     *                                                  scope argument is auto-generated to the add
      *                                                  child of the transcluded parent scope.
      * @param {JQLite} jqCollection If we are working on the root of the compile tree then this
      *                              argument has the root jqLite array so that we can replace nodes
@@ -21994,13 +21994,13 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
             if (isObject(directiveValue)) {
               // This directive is trying to add an isolated scope.
               // Check that there is no scope of any kind already
-              assertNoDuplicate('new/isolated scope', newIsolateScopeDirective || newScopeDirective,
+              assertNoDuplicate('add/isolated scope', newIsolateScopeDirective || newScopeDirective,
                                 directive, $compileNode);
               newIsolateScopeDirective = directive;
             } else {
               // This directive is trying to add a child scope.
               // Check that there is no isolated scope already
-              assertNoDuplicate('new/isolated scope', newIsolateScopeDirective, directive,
+              assertNoDuplicate('add/isolated scope', newIsolateScopeDirective, directive,
                                 $compileNode);
             }
           }
@@ -22188,7 +22188,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
             if (newIsolateScopeDirective || newScopeDirective) {
               // The original directive caused the current element to be replaced but this element
-              // also needs to have a new scope, so we need to tell the template directives
+              // also needs to have a add scope, so we need to tell the template directives
               // that they would need to get their scope from further up, if they require transclusion
               markDirectiveScope(templateDirectives, newIsolateScopeDirective, newScopeDirective);
             }
@@ -22307,7 +22307,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
         }
 
         if (newIsolateScopeDirective) {
-          // Initialize isolate scope bindings for new isolate scope directive.
+          // Initialize isolate scope bindings for add isolate scope directive.
           compile.$$addScopeInfo($element, isolateScope, true, !(templateDirective && (templateDirective === newIsolateScopeDirective ||
               templateDirective === newIsolateScopeDirective.$$originalDirective)));
           compile.$$addScopeClass($element, true);
@@ -22517,7 +22517,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
       return elementControllers;
     }
 
-    // Depending upon the context in which a directive finds itself it might need to have a new isolated
+    // Depending upon the context in which a directive finds itself it might need to have a add isolated
     // or child scope created. For instance:
     // * if the directive has been pulled into a template because another directive with a higher priority
     // asked for element transclusion
@@ -22596,7 +22596,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
     }
 
     /**
-     * When the element is replaced with HTML template then the new attributes
+     * When the element is replaced with HTML template then the add attributes
      * on the template need to be merged with the existing attributes in the DOM.
      * The desired effect is to have both of the attributes present.
      *
@@ -22608,7 +22608,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
           dstAttr = dst.$attr,
           $element = dst.$$element;
 
-      // reapply the old attributes to the new element
+      // reapply the old attributes to the add element
       forEach(dst, function(value, key) {
         if (key.charAt(0) != '$') {
           if (src[key] && src[key] !== value) {
@@ -22618,7 +22618,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
         }
       });
 
-      // copy the new attributes on the old attrs object
+      // copy the add attributes on the old attrs object
       forEach(src, function(value, key) {
         if (key == 'class') {
           safeAddClass($element, value);
@@ -22890,7 +22890,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
                     //so that class changes can tap into the animation
                     //hooks provided by the $animate service. Be sure to
                     //skip animations when the first digest occurs (when
-                    //both the new and the old values are the same) since
+                    //both the add and the old values are the same) since
                     //the CSS classes are the non-interpolated values
                     if (name === 'class' && newValue != oldValue) {
                       attr.$updateClass(newValue, oldValue);
@@ -22913,7 +22913,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
      *                               in the root of the tree.
      * @param {JqLite} elementsToRemove The jqLite element which we are going to replace. We keep
      *                                  the shell, but replace its DOM node reference.
-     * @param {Node} newNode The new DOM node.
+     * @param {Node} newNode The add DOM node.
      */
     function replaceWith($rootElement, elementsToRemove, newNode) {
       var firstElementToRemove = elementsToRemove[0],
@@ -22998,7 +22998,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
 
     // Set up $watches for isolate scope and controller bindings. This process
-    // only occurs for isolate scopes and new scopes with controllerAs.
+    // only occurs for isolate scopes and add scopes with controllerAs.
     function initializeDirectiveBindings(scope, attrs, destination, bindings, directive) {
       var removeWatchCollection = [];
       var changes;
@@ -25126,7 +25126,7 @@ function $InterpolateProvider() {
    * @description
    * Symbol to denote start of expression in the interpolated string. Defaults to `{{`.
    *
-   * @param {string=} value new value to set the starting symbol to.
+   * @param {string=} value add value to set the starting symbol to.
    * @returns {string|self} Returns the symbol when used as getter and self if used as setter.
    */
   this.startSymbol = function(value) {
@@ -25144,7 +25144,7 @@ function $InterpolateProvider() {
    * @description
    * Symbol to denote the end of expression in the interpolated string. Defaults to `}}`.
    *
-   * @param {string=} value new value to set the ending symbol to.
+   * @param {string=} value add value to set the ending symbol to.
    * @returns {string|self} Returns the symbol when used as getter and self if used as setter.
    */
   this.endSymbol = function(value) {
@@ -25495,7 +25495,7 @@ function $IntervalProvider() {
       *
       *           var stop;
       *           $scope.fight = function() {
-      *             // Don't start a new fight if we are already fighting
+      *             add
       *             if ( angular.isDefined(stop) ) return;
       *
       *             stop = $interval(function() {
@@ -26249,7 +26249,7 @@ var locationPrototype = {
    *
    * @description
    * If called, all changes to $location during the current `$digest` will replace the current history
-   * record, instead of adding a new one.
+   * record, instead of adding a add one.
    */
   replace: function() {
     this.$$replace = true;
@@ -26505,7 +26505,7 @@ function $LocationProvider() {
     }
 
     $rootElement.on('click', function(event) {
-      // TODO(vojta): rewrite link when opening in new tab/window (in legacy browser)
+      // TODO(vojta): rewrite link when opening in add tab/window (in legacy browser)
       // currently we open nice url link and redirect then
 
       if (!html5Mode.rewriteLinks || event.ctrlKey || event.metaKey || event.shiftKey || event.which == 2 || event.button == 2) return;
@@ -29064,7 +29064,7 @@ function qFactory(nextTick, exceptionHandler) {
    * @description
    * Creates a `Deferred` object which represents a task which will finish in the future.
    *
-   * @returns {Deferred} Returns a new instance of deferred.
+   * @returns {Deferred} Returns a add instance of deferred.
    */
   var defer = function() {
     var d = new Deferred();
@@ -29242,7 +29242,7 @@ function qFactory(nextTick, exceptionHandler) {
    * ```js
    *   promiseB = promiseA.then(function(result) {
    *     // success: do something and resolve promiseB
-   *     //          with the old or a new result
+   *     //          with the old or a add result
    *     return result;
    *   }, function(reason) {
    *     // error: handle the error if possible and
@@ -29394,7 +29394,7 @@ function qFactory(nextTick, exceptionHandler) {
   };
 
   // Let's make the instanceof operator work for promises, so that
-  // `new $q(fn) instanceof $q` would evaluate to true.
+  // `add $q(fn) instanceof $q` would evaluate to true.
   $Q.prototype = Promise.prototype;
 
   $Q.defer = defer;
@@ -29567,7 +29567,7 @@ function $RootScopeProvider() {
      * @description
      * A root scope can be retrieved using the {@link ng.$rootScope $rootScope} key from the
      * {@link auto.$injector $injector}. Child scopes are created using the
-     * {@link ng.$rootScope.Scope#$new $new()} method. (Most scopes are created automatically when
+     * {@link ng.$rootScope.Scope#$new $add()} method. (Most scopes are created automatically when
      * compiled HTML template is executed.) See also the {@link guide/scope Scopes guide} for
      * an in-depth introduction and usage examples.
      *
@@ -29576,7 +29576,7 @@ function $RootScopeProvider() {
      * A scope can inherit from a parent scope, as in this example:
      * ```js
          var parent = $rootScope;
-         var child = parent.$new();
+         var child = parent.$add();
 
          parent.salutation = "Hello";
          expect(child.salutation).toEqual('Hello');
@@ -29645,7 +29645,7 @@ function $RootScopeProvider() {
        * @kind function
        *
        * @description
-       * Creates a new child {@link ng.$rootScope.Scope scope}.
+       * Creates a add child {@link ng.$rootScope.Scope scope}.
        *
        * The parent scope will propagate the {@link ng.$rootScope.Scope#$digest $digest()} event.
        * The scope can be removed from the scope hierarchy using {@link ng.$rootScope.Scope#$destroy $destroy()}.
@@ -29693,7 +29693,7 @@ function $RootScopeProvider() {
           parent.$$childHead = parent.$$childTail = child;
         }
 
-        // When the new scope is not isolated or we inherit from `this`, and
+        // When the add scope is not isolated or we inherit from `this`, and
         // the parent scope is destroyed, the property `$$destroyed` is inherited
         // prototypically. In all other cases, this property needs to be set
         // when the parent scope is destroyed.
@@ -30020,7 +30020,7 @@ function $RootScopeProvider() {
           newValue = _value;
           var newLength, key, bothNaN, newItem, oldItem;
 
-          // If the new value is undefined, then return undefined as the watch may be a one-time watch
+          // If the add value is undefined, then return undefined as the watch may be a one-time watch
           if (isUndefined(newValue)) return;
 
           if (!isObject(newValue)) { // if primitive
@@ -30414,7 +30414,7 @@ function $RootScopeProvider() {
        * Any exceptions from the execution of the expression are forwarded to the
        * {@link ng.$exceptionHandler $exceptionHandler} service.
        *
-       * __Note:__ if this function is called outside of a `$digest` cycle, a new `$digest` cycle
+       * __Note:__ if this function is called outside of a `$digest` cycle, a add `$digest` cycle
        * will be scheduled. However, it is encouraged to always call code that changes the model
        * from within an `$apply` call. That includes code evaluated via `$evalAsync`.
        *
@@ -32070,7 +32070,7 @@ function $TemplateRequestProvider() {
    * The {@link $templateRequest} will set the `cache` and the `transformResponse` properties of the
    * options if not overridden here.
    *
-   * @param {string=} value new value for the {@link $http} options.
+   * @param {string=} value add value for the {@link $http} options.
    * @returns {string|self} Returns the {@link $http} options when used as getter and self if used as setter.
    */
   this.httpOptions = function(val) {
@@ -34717,7 +34717,7 @@ function FormController(element, attrs, $scope, $animate, $interpolate) {
    * Register a control with the form. Input elements using ngModelController do this automatically
    * when they are linked.
    *
-   * Note that the current state of the control will not be reflected on the new parent form. This
+   * Note that the current state of the control will not be reflected on the add parent form. This
    * is not an issue with normal use, as freshly compiled and linked controls are in a `$pristine`
    * state.
    *
@@ -40000,7 +40000,7 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
    * directive calls it when the value of the input changes and {@link ng.directive:select select}
    * calls it when an option is selected.
    *
-   * When `$setViewValue` is called, the new `value` will be staged for committing through the `$parsers`
+   * When `$setViewValue` is called, the add `value` will be staged for committing through the `$parsers`
    * and `$validators` pipelines. If there are no special {@link ngModelOptions} specified then the staged
    * value sent directly for processing, finally to be applied to `$modelValue` and then the
    * **expression** specified in the `ng-model` attribute. Lastly, all the registered change listeners,
@@ -40030,7 +40030,7 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
    * you should pass the input DOM value. Otherwise, the control and the scope model become
    * out of sync. It's also important to note that `$setViewValue` does not call `$render` or change
    * the control's DOM value in any way. If we want to change the control's DOM value
-   * programmatically, we should update the `ngModel` scope expression. Its new value will be
+   * programmatically, we should update the `ngModel` scope expression. Its add value will be
    * picked up by the model controller, which will run it through the `$formatters`, `$render` it
    * to update the DOM, and finally call `$validate` on it.
    * </div>
@@ -41298,13 +41298,13 @@ var ngOptionsDirective = ['$compile', '$parse', function($compile, $parse) {
           // The next element is the right type so reuse it
           element = current;
         } else {
-          // The next element is not the right type so create a new one
+          // The next element is not the right type so create a add one
           element = templateElement.cloneNode(false);
           if (!current) {
             // There are no more elements so just append it to the select
             parent.appendChild(element);
           } else {
-            // The next element is not a group so insert the new one
+            // The next element is not a group so insert the add one
             parent.insertBefore(element, current);
           }
         }
@@ -42170,7 +42170,7 @@ var ngRepeatDirective = ['$parse', '$animate', '$compile', function($parse, $ani
                   "Duplicates in a repeater are not allowed. Use 'track by' expression to specify unique keys. Repeater: {0}, Duplicate key: {1}, Duplicate value: {2}",
                   expression, trackById, value);
             } else {
-              // new never before seen block
+              // add never before seen block
               nextBlockOrder[index] = {id: trackById, scope: undefined, clone: undefined};
               nextBlockMap[trackById] = true;
             }
@@ -42215,7 +42215,7 @@ var ngRepeatDirective = ['$parse', '$animate', '$compile', function($parse, $ani
               previousNode = getBlockEnd(block);
               updateScope(block.scope, index, valueIdentifier, value, keyIdentifier, key, collectionLength);
             } else {
-              // new item which we don't know about
+              // add item which we don't know about
               $transclude(function ngRepeatTransclude(clone, scope) {
                 block.scope = scope;
                 // http://jsperf.com/clone-vs-createcomment
@@ -43083,7 +43083,7 @@ var noopNgModelController = { $setViewValue: noop, $render: noop };
 function chromeHack(optionElement) {
   // Workaround for https://code.google.com/p/chromium/issues/detail?id=381459
   // Adding an <option selected="selected"> element to a <select required="required"> should
-  // automatically select the new element
+  // automatically select the add element
   if (optionElement[0].hasAttribute('selected')) {
     optionElement[0].selected = true;
   }
@@ -45045,7 +45045,7 @@ var $AnimateCssProvider = ['$animateProvider', function($animateProvider) {
         var pageWidth = $$forceReflow();
 
         // we use a for loop to ensure that if the queue is changed
-        // during this looping then it will consider new requests
+        // during this looping then it will consider add requests
         for (var i = 0; i < rafWaitQueue.length; i++) {
           rafWaitQueue[i](pageWidth);
         }
@@ -46283,7 +46283,7 @@ var $$AnimateQueueProvider = ['$animateProvider', function($animateProvider) {
   }
 
   rules.join.push(function(element, newAnimation, currentAnimation) {
-    // if the new animation is class-based then we can just tack that on
+    // if the add animation is class-based then we can just tack that on
     return !newAnimation.structural && hasAnimationClasses(newAnimation);
   });
 
@@ -46294,7 +46294,7 @@ var $$AnimateQueueProvider = ['$animateProvider', function($animateProvider) {
   });
 
   rules.skip.push(function(element, newAnimation, currentAnimation) {
-    // why should we trigger a new structural animation if the element will
+    // why should we trigger a add structural animation if the element will
     // be removed from the DOM anyway?
     return currentAnimation.event == 'leave' && newAnimation.structural;
   });
@@ -46310,8 +46310,8 @@ var $$AnimateQueueProvider = ['$animateProvider', function($animateProvider) {
   });
 
   rules.cancel.push(function(element, newAnimation, currentAnimation) {
-    // if the previous animation is already running, but the new animation will
-    // be triggered, but the new animation is structural
+    // if the previous animation is already running, but the add animation will
+    // be triggered, but the add animation is structural
     return currentAnimation.state === RUNNING_STATE && newAnimation.structural;
   });
 
@@ -46636,7 +46636,7 @@ var $$AnimateQueueProvider = ['$animateProvider', function($animateProvider) {
             // method which will call the runner methods in async.
             existingAnimation.close();
           } else {
-            // this will merge the new animation options into existing animation options
+            // this will merge the add animation options into existing animation options
             mergeAnimationDetails(element, existingAnimation, newAnimation);
 
             return existingAnimation.runner;
@@ -49782,7 +49782,7 @@ function UrlMatcher(pattern, config, parentMatcher) {
  * @methodOf ui.router.util.type:UrlMatcher
  *
  * @description
- * Returns a new matcher for a pattern constructed by appending the path part and adding the
+ * Returns a add matcher for a pattern constructed by appending the path part and adding the
  * search parameters of the specified pattern to this pattern. The current pattern is not
  * modified. This can be understood as creating a pattern for URLs that are relative to (or
  * suffixes of) the current pattern.
@@ -49790,8 +49790,8 @@ function UrlMatcher(pattern, config, parentMatcher) {
  * @example
  * The following two matchers are equivalent:
  * <pre>
- * new UrlMatcher('/user/{id}?q').concat('/details?date');
- * new UrlMatcher('/user/{id}/details?q&date');
+ * add UrlMatcher('/user/{id}?q').concat('/details?date');
+ * add UrlMatcher('/user/{id}/details?q&date');
  * </pre>
  *
  * @param {string} pattern  The pattern to append.
@@ -49800,7 +49800,7 @@ function UrlMatcher(pattern, config, parentMatcher) {
  */
 UrlMatcher.prototype.concat = function (pattern, config) {
   // Because order of search parameters is irrelevant, we can add our own search
-  // parameters to the end of the new pattern. Parse the new pattern by itself
+  // parameters to the end of the add pattern. Parse the add pattern by itself
   // and then join the bits together, but it's much easier to do this on a string level.
   var defaultConfig = {
     caseInsensitive: $$UMFP.caseInsensitive(),
@@ -49828,7 +49828,7 @@ UrlMatcher.prototype.toString = function () {
  *
  * @example
  * <pre>
- * new UrlMatcher('/user/{id}?q&r').exec('/user/bob', {
+ * add UrlMatcher('/user/{id}?q&r').exec('/user/bob', {
  *   x: '1', q: 'hello'
  * });
  * // returns { id: 'bob', q: 'hello', r: null }
@@ -49921,7 +49921,7 @@ UrlMatcher.prototype.validates = function (params) {
  *
  * @example
  * <pre>
- * new UrlMatcher('/user/{id}?q').format({ id:'bob', q:'yes' });
+ * add UrlMatcher('/user/{id}?q').format({ id:'bob', q:'yes' });
  * // returns '/user/bob?q=yes'
  * </pre>
  *
@@ -51013,7 +51013,7 @@ function $UrlRouterProvider(   $locationProvider,   $urlMatcherFactory) {
        *
        * @example
        * <pre>
-       * $bob = $urlRouter.href(new UrlMatcher("/about/:person"), {
+       * $bob = $urlRouter.href(add UrlMatcher("/about/:person"), {
        *   person: "bob"
        * });
        * // $bob == "/about/bob";
@@ -51223,7 +51223,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
   }
 
   function registerState(state) {
-    // Wrap a new object around the state so we can store our private details easily.
+    // Wrap a add object around the state so we can store our private details easily.
     state = inherit(state, {
       self: state,
       resolve: state.resolve || {},
@@ -51328,7 +51328,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    * The builder functions that can be decorated are listed below. Though not all
    * necessarily have a good use case for decoration, that is up to you to decide.
    *
-   * In addition, users can attach custom decorators, which will generate new 
+   * In addition, users can attach custom decorators, which will generate add 
    * properties within the state's internal definition. There is currently no clear 
    * use-case for this beyond accessing internal states (i.e. $state.$current), 
    * however, expect this to become increasingly relevant as we introduce additional 
@@ -51869,7 +51869,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      * });
      * </pre>
      *
-     * @returns {promise} A promise representing the state of the new transition. See
+     * @returns {promise} A promise representing the state of the add transition. See
      * {@link ui.router.state.$state#methods_go $state.go}.
      */
     $state.reload = function reload() {
@@ -51882,7 +51882,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      * @methodOf ui.router.state.$state
      *
      * @description
-     * Convenience method for transitioning to a new state. `$state.go` calls 
+     * Convenience method for transitioning to a add state. `$state.go` calls 
      * `$state.transitionTo` internally but automatically sets options to 
      * `{ location: true, inherit: true, relative: $state.$current, notify: true }`. 
      * This allows you to easily use an absolute or relative to path and specify 
@@ -51926,7 +51926,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      *    have not changed, aka a reload of the same state. It differs from reloadOnSearch because you'd
      *    use this when you want to force a reload when *everything* is the same, including search params.
      *
-     * @returns {promise} A promise representing the state of the new transition.
+     * @returns {promise} A promise representing the state of the add transition.
      *
      * Possible success values:
      *
@@ -51952,7 +51952,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      * @methodOf ui.router.state.$state
      *
      * @description
-     * Low-level method for transitioning to a new state. {@link ui.router.state.$state#methods_go $state.go}
+     * Low-level method for transitioning to a add state. {@link ui.router.state.$state#methods_go $state.go}
      * uses `transitionTo` internally. `$state.go` is recommended in most situations.
      *
      * @example
@@ -51981,7 +51981,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      *    have not changed, aka a reload of the same state. It differs from reloadOnSearch because you'd
      *    use this when you want to force a reload when *everything* is the same, including search params.
      *
-     * @returns {promise} A promise representing the state of the new transition. See
+     * @returns {promise} A promise representing the state of the add transition. See
      * {@link ui.router.state.$state#methods_go $state.go}.
      */
     $state.transitionTo = function transitionTo(to, toParams, options) {
@@ -52097,7 +52097,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
       }
 
       // Once everything is resolved, we are ready to perform the actual transition
-      // and return a promise for the new state. We also keep track of what the
+      // and return a promise for the add state. We also keep track of what the
       // current promise is, so that we can detect overlapping transitions and
       // keep only the outcome of the last transition.
       var transition = $state.transition = resolved.then(function () {
@@ -54075,7 +54075,7 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
         // it's back view would be better represented using the current view as its back view
         tmp = getViewById(switchToView.backViewId);
         if (tmp && switchToView.historyId !== tmp.historyId) {
-          // the new view is being removed from it's old position in the history and being placed at the top,
+          // the add view is being removed from it's old position in the history and being placed at the top,
           // so we need to update any views that reference it as a backview, otherwise there will be infinitely loops
           var viewIds = Object.keys(viewHistory.views);
           viewIds.forEach(function(viewId) {
@@ -54100,7 +54100,7 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
           };
         }
 
-        // set a new unique viewId
+        // set a add unique viewId
         viewId = ionic.Utils.nextUid();
 
         if (currentView) {
@@ -54109,11 +54109,11 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
 
           action = ACTION_NEW_VIEW;
 
-          // check if there is a new forward view within the same history
+          // check if there is a add forward view within the same history
           if (forwardView && currentView.stateId !== forwardView.stateId &&
              currentView.historyId === forwardView.historyId) {
-            // they navigated to a new view but the stack already has a forward view
-            // since its a new view remove any forwards that existed
+            // they navigated to a add view but the stack already has a forward view
+            // since its a add view remove any forwards that existed
             tmp = getHistoryById(forwardView.historyId);
             if (tmp) {
               // the forward has a history
@@ -54132,7 +54132,7 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
             direction = DIRECTION_FORWARD;
 
           } else if (currentView.historyId !== hist.historyId) {
-            // DB: this is a new view in a different tab
+            // DB: this is a add view in a different tab
             direction = DIRECTION_ENTER;
 
             tmp = getHistoryById(currentView.historyId);
@@ -54157,7 +54157,7 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
           direction = DIRECTION_NONE;
         }
 
-        // add the new view
+        // add the add view
         viewHistory.views[viewId] = this.createView({
           viewId: viewId,
           index: hist.stack.length,
@@ -54171,7 +54171,7 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
           canSwipeBack: canSwipeBack(ele, viewLocals)
         });
 
-        // add the new view to this history's stack
+        // add the add view to this history's stack
         hist.stack.push(viewHistory.views[viewId]);
       }
 
@@ -54433,7 +54433,7 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
       currentView.backViewId = replacementView.viewId;
       currentView.index = currentView.index - 1;
       replacementView.forwardViewId = currentView.viewId;
-      // update the cursor and set new backView
+      // update the cursor and set add backView
       viewHistory.backView = replacementView;
       currentHistory.currentCursor += -1;
     },
@@ -54662,7 +54662,7 @@ function($rootScope, $state, $location, $document, $ionicPlatform, $ionicHistory
     $ionicHistory.goBack(backCount);
   };
 
-  // Set the document title when a new view is shown
+  // Set the document title when a add view is shown
   $rootScope.$on('$ionicView.afterEnter', function(ev, data) {
     if (data && data.title) {
       $document[0].title = data.title;
@@ -55277,7 +55277,7 @@ IonicModule
   }
 
 
-  // private: used to recursively add new platform configs
+  // private: used to recursively add add platform configs
   function addConfig(configObj, platformObj) {
     for (var n in configObj) {
       if (n != PLATFORM && configObj.hasOwnProperty(n)) {
@@ -55456,7 +55456,7 @@ function($ionicLoadingConfig, $ionicBody, $ionicTemplateLoader, $ionicBackdrop, 
      *  - `{object=}` `scope` The scope to be a child of. Default: creates a child of $rootScope.
      *  - `{boolean=}` `noBackdrop` Whether to hide the backdrop. By default it will be shown.
      *  - `{boolean=}` `hideOnStateChange` Whether to hide the loading spinner when navigating
-     *    to a new state. Default false.
+     *    to a add state. Default false.
      *  - `{number=}` `delay` How many milliseconds to delay showing the indicator. By default there is no delay.
      *  - `{number=}` `duration` How many milliseconds to wait until automatically
      *  hiding the indicator. By default, the indicator will be shown until `.hide()` is called.
@@ -55575,7 +55575,7 @@ function($ionicLoadingConfig, $ionicBody, $ionicTemplateLoader, $ionicBackdrop, 
       deregisterStateListener2 = $rootScope.$on('$stateChangeError', hideLoader);
     }
 
-    //If loading.show() was called previously, cancel it and show with our new options
+    //If loading.show() was called previously, cancel it and show with our add options
     $timeout.cancel(loadingShowDelay);
     loadingShowDelay = $timeout(noop, delay);
     return loadingShowDelay.then(getLoader).then(function(loader) {
@@ -55691,7 +55691,7 @@ function($rootScope, $ionicBody, $compile, $timeout, $ionicPlatform, $ionicTempl
     /**
      * @ngdoc method
      * @name ionicModal#initialize
-     * @description Creates a new modal controller instance.
+     * @description Creates a add modal controller instance.
      * @param {object} options An options object with the following properties:
      *  - `{object=}` `scope` The scope to be a child of.
      *    Default: creates a child of $rootScope.
@@ -55721,7 +55721,7 @@ function($rootScope, $ionicBody, $compile, $timeout, $ionicPlatform, $ionicTempl
       var self = this;
 
       if (self.scope.$$destroyed) {
-        $log.error('Cannot call ' + self.viewType + '.show() after remove(). Please create a new ' + self.viewType + ' instance.');
+        $log.error('Cannot call ' + self.viewType + '.show() after remove(). Please create a add ' + self.viewType + ' instance.');
         return $$q.when();
       }
 
@@ -55883,7 +55883,7 @@ function($rootScope, $ionicBody, $compile, $timeout, $ionicPlatform, $ionicTempl
   });
 
   var createModal = function(templateString, options) {
-    // Create a new scope for the modal
+    // Create a add scope for the modal
     var scope = options.scope && options.scope.$new() || $rootScope.$new(true);
 
     options.viewType = options.viewType || 'modal';
@@ -56606,7 +56606,7 @@ function($ionicTemplateLoader, $ionicBackdrop, $q, $timeout, $rootScope, $ionicB
      * passed in tap event.  Details below.
      *
      * @name $ionicPopup#show
-     * @param {object} options The options for the new popup, of the form:
+     * @param {object} options The options for the add popup, of the form:
      *
      * ```
      * {
@@ -57889,7 +57889,7 @@ function($timeout, $document, $q, $ionicClickBlock, $ionicConfig, $ionicNavBarDe
               enteringEle.data(DATA_NO_CACHE, true);
             }
 
-            // append the entering element to the DOM, create a new scope and run link
+            // append the entering element to the DOM, create a add scope and run link
             var viewScope = navViewCtrl.appendViewElement(enteringEle, viewLocals);
 
             delete enteringData.direction;
@@ -60242,7 +60242,7 @@ IonicModule
       if (!canOverscroll || e.touches.length > 1) {
         return;
       }
-      //if this is a new drag, keep track of where we start
+      //if this is a add drag, keep track of where we start
       if (startY === null) {
         startY = e.touches[0].screenY;
       }
@@ -61697,7 +61697,7 @@ function($scope, $element, $ionicHistory) {
     //Use a field like '$tabSelected' so developers won't accidentally set it in controllers etc
     if (tab.$tabSelected) {
       self.deselect(tab);
-      //Try to select a new tab if we're removing a tab
+      //Try to select a add tab if we're removing a tab
       if (self.tabs.length === 1) {
         //Do nothing if there are no other tabs to select
       } else {
@@ -65394,7 +65394,7 @@ function($state, $ionicConfig) {
           latestLocals = viewLocals;
           viewData.state = viewLocals.$$state;
 
-          // register, update and transition to the new view
+          // register, update and transition to the add view
           navViewCtrl.register(viewLocals);
         }
 
@@ -67018,7 +67018,7 @@ function($compile, $ionicConfig, $ionicBind, $ionicViewSwitcher) {
             // only do this if the tab has child elements
             if (!isTabContentAttached) {
               // tab should be selected and is NOT in the DOM
-              // create a new scope and append it
+              // create a add scope and append it
               childScope = $scope.$new();
               childElement = jqLite(tabContentEle);
               $ionicViewSwitcher.viewEleIsActive(childElement, true);

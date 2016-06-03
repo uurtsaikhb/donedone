@@ -897,7 +897,7 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
         // it's back view would be better represented using the current view as its back view
         tmp = getViewById(switchToView.backViewId);
         if (tmp && switchToView.historyId !== tmp.historyId) {
-          // the new view is being removed from it's old position in the history and being placed at the top,
+          // the add view is being removed from it's old position in the history and being placed at the top,
           // so we need to update any views that reference it as a backview, otherwise there will be infinitely loops
           var viewIds = Object.keys(viewHistory.views);
           viewIds.forEach(function(viewId) {
@@ -922,7 +922,7 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
           };
         }
 
-        // set a new unique viewId
+        // set a add unique viewId
         viewId = ionic.Utils.nextUid();
 
         if (currentView) {
@@ -931,11 +931,11 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
 
           action = ACTION_NEW_VIEW;
 
-          // check if there is a new forward view within the same history
+          // check if there is a add forward view within the same history
           if (forwardView && currentView.stateId !== forwardView.stateId &&
              currentView.historyId === forwardView.historyId) {
-            // they navigated to a new view but the stack already has a forward view
-            // since its a new view remove any forwards that existed
+            // they navigated to a add view but the stack already has a forward view
+            // since its a add view remove any forwards that existed
             tmp = getHistoryById(forwardView.historyId);
             if (tmp) {
               // the forward has a history
@@ -954,7 +954,7 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
             direction = DIRECTION_FORWARD;
 
           } else if (currentView.historyId !== hist.historyId) {
-            // DB: this is a new view in a different tab
+            // DB: this is a add view in a different tab
             direction = DIRECTION_ENTER;
 
             tmp = getHistoryById(currentView.historyId);
@@ -979,7 +979,7 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
           direction = DIRECTION_NONE;
         }
 
-        // add the new view
+        // add the add view
         viewHistory.views[viewId] = this.createView({
           viewId: viewId,
           index: hist.stack.length,
@@ -993,7 +993,7 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
           canSwipeBack: canSwipeBack(ele, viewLocals)
         });
 
-        // add the new view to this history's stack
+        // add the add view to this history's stack
         hist.stack.push(viewHistory.views[viewId]);
       }
 
@@ -1255,7 +1255,7 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
       currentView.backViewId = replacementView.viewId;
       currentView.index = currentView.index - 1;
       replacementView.forwardViewId = currentView.viewId;
-      // update the cursor and set new backView
+      // update the cursor and set add backView
       viewHistory.backView = replacementView;
       currentHistory.currentCursor += -1;
     },
@@ -1484,7 +1484,7 @@ function($rootScope, $state, $location, $document, $ionicPlatform, $ionicHistory
     $ionicHistory.goBack(backCount);
   };
 
-  // Set the document title when a new view is shown
+  // Set the document title when a add view is shown
   $rootScope.$on('$ionicView.afterEnter', function(ev, data) {
     if (data && data.title) {
       $document[0].title = data.title;
@@ -2099,7 +2099,7 @@ IonicModule
   }
 
 
-  // private: used to recursively add new platform configs
+  // private: used to recursively add add platform configs
   function addConfig(configObj, platformObj) {
     for (var n in configObj) {
       if (n != PLATFORM && configObj.hasOwnProperty(n)) {
@@ -2278,7 +2278,7 @@ function($ionicLoadingConfig, $ionicBody, $ionicTemplateLoader, $ionicBackdrop, 
      *  - `{object=}` `scope` The scope to be a child of. Default: creates a child of $rootScope.
      *  - `{boolean=}` `noBackdrop` Whether to hide the backdrop. By default it will be shown.
      *  - `{boolean=}` `hideOnStateChange` Whether to hide the loading spinner when navigating
-     *    to a new state. Default false.
+     *    to a add state. Default false.
      *  - `{number=}` `delay` How many milliseconds to delay showing the indicator. By default there is no delay.
      *  - `{number=}` `duration` How many milliseconds to wait until automatically
      *  hiding the indicator. By default, the indicator will be shown until `.hide()` is called.
@@ -2397,7 +2397,7 @@ function($ionicLoadingConfig, $ionicBody, $ionicTemplateLoader, $ionicBackdrop, 
       deregisterStateListener2 = $rootScope.$on('$stateChangeError', hideLoader);
     }
 
-    //If loading.show() was called previously, cancel it and show with our new options
+    //If loading.show() was called previously, cancel it and show with our add options
     $timeout.cancel(loadingShowDelay);
     loadingShowDelay = $timeout(noop, delay);
     return loadingShowDelay.then(getLoader).then(function(loader) {
@@ -2513,7 +2513,7 @@ function($rootScope, $ionicBody, $compile, $timeout, $ionicPlatform, $ionicTempl
     /**
      * @ngdoc method
      * @name ionicModal#initialize
-     * @description Creates a new modal controller instance.
+     * @description Creates a add modal controller instance.
      * @param {object} options An options object with the following properties:
      *  - `{object=}` `scope` The scope to be a child of.
      *    Default: creates a child of $rootScope.
@@ -2543,7 +2543,7 @@ function($rootScope, $ionicBody, $compile, $timeout, $ionicPlatform, $ionicTempl
       var self = this;
 
       if (self.scope.$$destroyed) {
-        $log.error('Cannot call ' + self.viewType + '.show() after remove(). Please create a new ' + self.viewType + ' instance.');
+        $log.error('Cannot call ' + self.viewType + '.show() after remove(). Please create a add ' + self.viewType + ' instance.');
         return $$q.when();
       }
 
@@ -2705,7 +2705,7 @@ function($rootScope, $ionicBody, $compile, $timeout, $ionicPlatform, $ionicTempl
   });
 
   var createModal = function(templateString, options) {
-    // Create a new scope for the modal
+    // Create a add scope for the modal
     var scope = options.scope && options.scope.$new() || $rootScope.$new(true);
 
     options.viewType = options.viewType || 'modal';
@@ -3428,7 +3428,7 @@ function($ionicTemplateLoader, $ionicBackdrop, $q, $timeout, $rootScope, $ionicB
      * passed in tap event.  Details below.
      *
      * @name $ionicPopup#show
-     * @param {object} options The options for the new popup, of the form:
+     * @param {object} options The options for the add popup, of the form:
      *
      * ```
      * {
@@ -4711,7 +4711,7 @@ function($timeout, $document, $q, $ionicClickBlock, $ionicConfig, $ionicNavBarDe
               enteringEle.data(DATA_NO_CACHE, true);
             }
 
-            // append the entering element to the DOM, create a new scope and run link
+            // append the entering element to the DOM, create a add scope and run link
             var viewScope = navViewCtrl.appendViewElement(enteringEle, viewLocals);
 
             delete enteringData.direction;
@@ -7064,7 +7064,7 @@ IonicModule
       if (!canOverscroll || e.touches.length > 1) {
         return;
       }
-      //if this is a new drag, keep track of where we start
+      //if this is a add drag, keep track of where we start
       if (startY === null) {
         startY = e.touches[0].screenY;
       }
@@ -8519,7 +8519,7 @@ function($scope, $element, $ionicHistory) {
     //Use a field like '$tabSelected' so developers won't accidentally set it in controllers etc
     if (tab.$tabSelected) {
       self.deselect(tab);
-      //Try to select a new tab if we're removing a tab
+      //Try to select a add tab if we're removing a tab
       if (self.tabs.length === 1) {
         //Do nothing if there are no other tabs to select
       } else {
@@ -12216,7 +12216,7 @@ function($state, $ionicConfig) {
           latestLocals = viewLocals;
           viewData.state = viewLocals.$$state;
 
-          // register, update and transition to the new view
+          // register, update and transition to the add view
           navViewCtrl.register(viewLocals);
         }
 
@@ -13840,7 +13840,7 @@ function($compile, $ionicConfig, $ionicBind, $ionicViewSwitcher) {
             // only do this if the tab has child elements
             if (!isTabContentAttached) {
               // tab should be selected and is NOT in the DOM
-              // create a new scope and append it
+              // create a add scope and append it
               childScope = $scope.$new();
               childElement = jqLite(tabContentEle);
               $ionicViewSwitcher.viewEleIsActive(childElement, true);

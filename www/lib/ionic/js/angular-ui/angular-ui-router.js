@@ -843,7 +843,7 @@ function UrlMatcher(pattern, config, parentMatcher) {
  * @methodOf ui.router.util.type:UrlMatcher
  *
  * @description
- * Returns a new matcher for a pattern constructed by appending the path part and adding the
+ * Returns a add matcher for a pattern constructed by appending the path part and adding the
  * search parameters of the specified pattern to this pattern. The current pattern is not
  * modified. This can be understood as creating a pattern for URLs that are relative to (or
  * suffixes of) the current pattern.
@@ -851,8 +851,8 @@ function UrlMatcher(pattern, config, parentMatcher) {
  * @example
  * The following two matchers are equivalent:
  * <pre>
- * new UrlMatcher('/user/{id}?q').concat('/details?date');
- * new UrlMatcher('/user/{id}/details?q&date');
+ * add UrlMatcher('/user/{id}?q').concat('/details?date');
+ * add UrlMatcher('/user/{id}/details?q&date');
  * </pre>
  *
  * @param {string} pattern  The pattern to append.
@@ -861,7 +861,7 @@ function UrlMatcher(pattern, config, parentMatcher) {
  */
 UrlMatcher.prototype.concat = function (pattern, config) {
   // Because order of search parameters is irrelevant, we can add our own search
-  // parameters to the end of the new pattern. Parse the new pattern by itself
+  // parameters to the end of the add pattern. Parse the add pattern by itself
   // and then join the bits together, but it's much easier to do this on a string level.
   var defaultConfig = {
     caseInsensitive: $$UMFP.caseInsensitive(),
@@ -889,7 +889,7 @@ UrlMatcher.prototype.toString = function () {
  *
  * @example
  * <pre>
- * new UrlMatcher('/user/{id}?q&r').exec('/user/bob', {
+ * add UrlMatcher('/user/{id}?q&r').exec('/user/bob', {
  *   x: '1', q: 'hello'
  * });
  * // returns { id: 'bob', q: 'hello', r: null }
@@ -982,7 +982,7 @@ UrlMatcher.prototype.validates = function (params) {
  *
  * @example
  * <pre>
- * new UrlMatcher('/user/{id}?q').format({ id:'bob', q:'yes' });
+ * add UrlMatcher('/user/{id}?q').format({ id:'bob', q:'yes' });
  * // returns '/user/bob?q=yes'
  * </pre>
  *
@@ -2074,7 +2074,7 @@ function $UrlRouterProvider(   $locationProvider,   $urlMatcherFactory) {
        *
        * @example
        * <pre>
-       * $bob = $urlRouter.href(new UrlMatcher("/about/:person"), {
+       * $bob = $urlRouter.href(add UrlMatcher("/about/:person"), {
        *   person: "bob"
        * });
        * // $bob == "/about/bob";
@@ -2284,7 +2284,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
   }
 
   function registerState(state) {
-    // Wrap a new object around the state so we can store our private details easily.
+    // Wrap a add object around the state so we can store our private details easily.
     state = inherit(state, {
       self: state,
       resolve: state.resolve || {},
@@ -2389,7 +2389,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    * The builder functions that can be decorated are listed below. Though not all
    * necessarily have a good use case for decoration, that is up to you to decide.
    *
-   * In addition, users can attach custom decorators, which will generate new 
+   * In addition, users can attach custom decorators, which will generate add 
    * properties within the state's internal definition. There is currently no clear 
    * use-case for this beyond accessing internal states (i.e. $state.$current), 
    * however, expect this to become increasingly relevant as we introduce additional 
@@ -2930,7 +2930,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      * });
      * </pre>
      *
-     * @returns {promise} A promise representing the state of the new transition. See
+     * @returns {promise} A promise representing the state of the add transition. See
      * {@link ui.router.state.$state#methods_go $state.go}.
      */
     $state.reload = function reload() {
@@ -2943,7 +2943,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      * @methodOf ui.router.state.$state
      *
      * @description
-     * Convenience method for transitioning to a new state. `$state.go` calls 
+     * Convenience method for transitioning to a add state. `$state.go` calls 
      * `$state.transitionTo` internally but automatically sets options to 
      * `{ location: true, inherit: true, relative: $state.$current, notify: true }`. 
      * This allows you to easily use an absolute or relative to path and specify 
@@ -2987,7 +2987,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      *    have not changed, aka a reload of the same state. It differs from reloadOnSearch because you'd
      *    use this when you want to force a reload when *everything* is the same, including search params.
      *
-     * @returns {promise} A promise representing the state of the new transition.
+     * @returns {promise} A promise representing the state of the add transition.
      *
      * Possible success values:
      *
@@ -3013,7 +3013,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      * @methodOf ui.router.state.$state
      *
      * @description
-     * Low-level method for transitioning to a new state. {@link ui.router.state.$state#methods_go $state.go}
+     * Low-level method for transitioning to a add state. {@link ui.router.state.$state#methods_go $state.go}
      * uses `transitionTo` internally. `$state.go` is recommended in most situations.
      *
      * @example
@@ -3042,7 +3042,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      *    have not changed, aka a reload of the same state. It differs from reloadOnSearch because you'd
      *    use this when you want to force a reload when *everything* is the same, including search params.
      *
-     * @returns {promise} A promise representing the state of the new transition. See
+     * @returns {promise} A promise representing the state of the add transition. See
      * {@link ui.router.state.$state#methods_go $state.go}.
      */
     $state.transitionTo = function transitionTo(to, toParams, options) {
@@ -3158,7 +3158,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
       }
 
       // Once everything is resolved, we are ready to perform the actual transition
-      // and return a promise for the new state. We also keep track of what the
+      // and return a promise for the add state. We also keep track of what the
       // current promise is, so that we can detect overlapping transitions and
       // keep only the outcome of the last transition.
       var transition = $state.transition = resolved.then(function () {
